@@ -21,7 +21,9 @@
 
 <style scoped lang="scss">
     .top {
+        // 固定容器不随滚动条变化
         position: fixed;
+        // 防止被其他容器覆盖
         z-index: 999;
         width: 100%;
         height: 70px;
@@ -56,7 +58,7 @@
                 justify-content: center;
                 align-items: center;
                 font-size: 14px;
-                color: #bbb;
+                color: #7c7171;
                 .help{
                     margin-right: 10px;
                 }

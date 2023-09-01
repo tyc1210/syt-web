@@ -32,6 +32,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: 14px;
+            color: #796e6e;;
             .right{
                 span{
                     margin-right: 10px;
