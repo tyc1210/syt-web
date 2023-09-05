@@ -2,15 +2,10 @@
     <div class="level">
         <h1>医院</h1>
         <div class="content">
-            <ul>
+            <ul >
                 <li>等级：</li>
                 <li class="active">全部</li>
-                <li>三级甲等</li>
-                <li>三级乙等</li>
-                <li>二级甲等</li>
-                <li>二级乙等</li>
-                <li>一级甲等</li>
-                <li>一级乙等</li>
+                <li v-for="item in names" :key="item">{{item}}</li>
             </ul>
         </div>
 
@@ -18,7 +13,10 @@
 </template>
 
 <script setup lang="ts">
-
+import {StringArr} from '@/api/home/type'
+defineProps<{
+  names:StringArr
+}>()
 </script>
 
 <style scoped lang="scss">

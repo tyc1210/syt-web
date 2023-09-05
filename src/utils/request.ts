@@ -7,7 +7,7 @@ import axios from 'axios'
 import {ElMessage} from 'element-plus'
 const request = axios.create({
     baseURL:'/api',
-    timeout:10000
+    timeout:5000
 })
 
 // 请求拦截器
