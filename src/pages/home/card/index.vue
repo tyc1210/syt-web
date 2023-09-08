@@ -1,7 +1,7 @@
 <template>
     <div>
-        <el-card class="box-card" shadow="hover">
-            <div class="content">
+        <el-card class="box-card" shadow="hover" >
+            <div class="content" @click="goDetail">
                 <div class="left">
                     <div class="hospital-name">
                         <h1>{{hospitalInfo.name}}</h1>
@@ -27,10 +27,18 @@
 
 <script setup lang="ts">
 import {Hospital} from '@/api/home/type'
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 
- 
+//获取路由器对象
+let $router = useRouter();
+//点击医院卡片的时候跳转到医院详情页面
+const goDetail = () => {
+  $router.push({ path: "/hospital/register"});
+};
+
 const staticServerUrl = ref("http://127.0.0.1:8007/static/imgs/")
+
 
 defineProps<{
     hospitalInfo:Hospital
