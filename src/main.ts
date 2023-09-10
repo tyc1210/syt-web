@@ -7,6 +7,7 @@ import App from './App.vue'
 // 引入全局组件 顶部和底部
 import HospitalTop from '@/components/hospital_top/index.vue'
 import HospotalBottom from  '@/components/hospotal_bottom/index.vue'
+import Login from '@/components/login/index.vue'
 // 引入路由
 import router from '@/router'
 // 引入element-ui
@@ -19,6 +20,7 @@ const app = createApp(App);
 // 注册全局组件
 app.component('HospitalTop',HospitalTop);
 app.component('HospotalBottom',HospotalBottom);
+app.component('Login',Login)
 // 安装路由
 app.use(router)
 // 使用element-ui

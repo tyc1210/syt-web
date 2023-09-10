@@ -38,23 +38,25 @@
         <div class="department">
             <div class="department_type">
                 <ul>
-                    
-                    <li :class="{active:true}">专科</li>
-                    <li>妇产科</li>
-                    <li>国际医疗部</li>
-                    <li>中医科</li>
-                    <li>五官</li>
-                    <li>外科</li>
-                    <li>营养科</li>
-                    <li>儿科</li>
-                    <li>内科</li>
-                    <li>儿科</li>
-                    <li>内科</li>
-                    
+                    <li @click="changeIndex(index)" v-for="(department,index) in departmentTypes" :key="department" :class="{active:index==currentIndex}">{{department}}</li>
                 </ul>
             </div>
             <div class="department_name">
-                222
+                <h1>专科</h1>
+                <ul >
+                    <li>111</li>
+                    <li>111</li>
+                    <li>111</li>
+                    <li>111</li>
+                    <li>111</li>
+                    <li>111</li>
+                </ul>
+                <h1>妇产科</h1>
+                <ul>
+                    <li>222</li>
+                    <li>222</li>
+                    <li>222</li>
+                </ul>
             </div>
         </div>
 
@@ -62,7 +64,23 @@
 </template>
 
 <script setup lang="ts">
+import {ref}  from 'vue'
+// 科室类型数据
+let departmentTypes = ref<string[]>(['妇产科','国际医疗部','中医科','五官','外科','营养科','儿科','内科','儿科','内科'])
+// 控制科室高亮的响应式数据
+let currentIndex = ref<number>(0)
+// 点击左侧大科室事件
+const changeIndex = (index:number) => {
+    currentIndex.value = index
+    let addH1 = document.querySelectorAll('cur')
+    // 滚动到对应科室位置
+    allH1[currentIndex.value].scrollIntoWiew({
+        behavior:'smooth', // 过度动画效果
+        block:'start' // 滚动到位置 默认起始位置
+    })
+}
 
+ 
 </script>
 
 <style scoped lang="scss">
@@ -138,6 +156,7 @@
         .department_type{
             width: 80px;
             height: 100%;
+            
             ul{
                 width: 100%;
                 height: 100%;
@@ -163,6 +182,23 @@
         .department_name{
             flex: 1;
             margin-left: 10px;
+            width: 100%;
+            overflow: auto;
+
+            h1{
+                background: rgb(248,248,248);
+                color: #7f7f7f;
+                margin-bottom:5px;
+            }
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                color: #7f7f7f;
+                li{
+                    width: 33%;
+                    margin-bottom:5px;
+                }
+            }
         }
     }
 }</style>

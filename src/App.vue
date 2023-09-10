@@ -9,6 +9,8 @@
         </div>
         <!-- 底部全局组件 -->
         <HospotalBottom/>
+        <!-- 登录组件 -->
+        <Login/>
     </div>
     </el-config-provider>
        
